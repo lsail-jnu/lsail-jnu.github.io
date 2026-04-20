@@ -4,45 +4,119 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LSAIL | Life Science and AI Lab</title>
+  <meta name="description" content="Life Science and AI Lab (LSAIL) at Chonnam National University — AI for Computational Biology." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="nav">
-      <div class="brand-wrap">
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand-wrap">
         <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
-        <div class="brand">Life Science and AI Lab (LSAIL)</div>
-      </div>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="people.html">People</a>
-        <a href="research.html">Research</a>
-        <a href="publications.html">Publications</a>
-        <a href="news.html">News</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-    <div class="hero">
-      <div>
-        <h1>AI for Computational Biology</h1>
-        <p class="lead">LSAIL builds biologically informed AI for molecular, cellular, and translational discovery.</p>
-        <div class="tagline">Life Science and AI Lab</div>
-      </div>
-
+        <div class="brand">LSAIL<small>Life Science and AI Lab</small></div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
+      <ul class="mainnav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li>
+          <a href="people.html">People</a>
+          <ul class="dropdown">
+            <li><a href="people.html#pi">Principal Investigator</a></li>
+            <li><a href="people.html#members">Members</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="research.html">Research</a>
+          <ul class="dropdown">
+            <li><a href="research.html">Research Areas</a></li>
+            <li><a href="research.html#computational-biology">Computational Biology</a></li>
+            <li><a href="research.html#drug-discovery">Drug Discovery</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="publications.html">Publications</a>
+          <ul class="dropdown">
+            <li><a href="publications.html">Selected</a></li>
+            <li><a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a></li>
+          </ul>
+        </li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
   </header>
 
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Chonnam National University</span>
+      <h1>Welcome to Life Science and AI Lab</h1>
+      <p class="lead">LSAIL builds biologically informed AI for molecular, cellular, and translational discovery — connecting chemistry with phenotype, genotype, transcriptomics, and morphology.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="research.html">Research</a>
+        <a class="btn btn-outline" href="contact.html">Be in Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="preview-band">
+    <div class="preview-grid">
+      <article class="preview-card">
+        <div class="cap">Research Area</div>
+        <h3>Computational Biology</h3>
+        <p>AI methods for understanding biological systems through molecular, cellular, and multi-omics data.</p>
+        <ul>
+          <li>Biology-aware molecular representation</li>
+          <li>Genotype / phenotype-guided modeling</li>
+          <li>Multimodal learning for life science</li>
+        </ul>
+        <a class="more" href="research.html">Learn more</a>
+      </article>
+
+      <article class="preview-card">
+        <div class="cap">Research Area</div>
+        <h3>AI for Drug Discovery</h3>
+        <p>Computational approaches for molecular discovery, virtual screening, candidate prioritization, and design.</p>
+        <ul>
+          <li>Toxicity &amp; safety prediction (hERG, ADMET)</li>
+          <li>Generative models for small molecules</li>
+          <li>Interpretable, reliable deep learning</li>
+        </ul>
+        <a class="more" href="research.html">Learn more</a>
+      </article>
+
+      <article class="preview-card">
+        <div class="cap">People</div>
+        <h3>Join LSAIL</h3>
+        <p>We welcome graduate and undergraduate students interested in AI, computational biology, and drug discovery.</p>
+        <ul>
+          <li>Department of Artificial Intelligence</li>
+          <li>Chonnam National University</li>
+          <li>Collaborations across life science</li>
+        </ul>
+        <a class="more" href="contact.html">Be in Touch</a>
+      </article>
+    </div>
+  </section>
+
   <main class="container">
     <section class="section">
-      <h2>About</h2>
+      <div class="section-title">
+        <div class="eyebrow">About</div>
+        <h2>AI for Computational Biology</h2>
+        <p>LSAIL studies computational biology at the interface of life science and artificial intelligence, developing AI methods that connect molecular structures with biological context.</p>
+      </div>
       <div class="feature-band">
-        <p>LSAIL studies computational biology at the interface of life science and artificial intelligence. We develop AI methods that connect molecular structures with biological context, including phenotype, genotype, transcriptomics, morphology, and other multimodal life science data.</p>
+        <p>We develop AI methods that connect molecular structures with biological context, including phenotype, genotype, transcriptomics, morphology, and other multimodal life science data.</p>
         <p>Our work spans broad computational biology, with major applications in drug discovery, toxicity and safety prediction, and biology-aware molecular modeling.</p>
       </div>
     </section>
 
     <section class="section">
-      <h2>Research Areas</h2>
+      <div class="section-title">
+        <div class="eyebrow">Research</div>
+        <h2>Research Areas</h2>
+        <p>Biologically grounded, practically useful, and scientifically reliable AI for life science.</p>
+      </div>
       <div class="grid">
         <div class="card"><div class="badge">AREA 01</div><h3>Computational Biology</h3><p>AI methods for molecular, cellular, and multi-omics data.</p></div>
         <div class="card"><div class="badge">AREA 02</div><h3>Drug Discovery</h3><p>Virtual screening, candidate prioritization, and molecular design.</p></div>
@@ -52,23 +126,47 @@
     </section>
 
     <section class="section">
-      <h2>Selected Publications</h2>
+      <div class="section-title">
+        <div class="eyebrow">Publications</div>
+        <h2>Selected Publications</h2>
+        <p>A sample of recent work from LSAIL.</p>
+      </div>
       <ul class="pubs">
         <li><strong>A genotype-to-drug diffusion model for generation of tailored anti-cancer small molecules</strong><br/>Nature Communications (2025)</li>
         <li><strong>BayeshERG: a robust, reliable and interpretable deep learning model for predicting hERG channel blockers</strong><br/>Briefings in Bioinformatics (2022)</li>
         <li><strong>Enhancing multi-task in vivo toxicity prediction via integrated knowledge transfer of chemical knowledge and in vitro toxicity information</strong><br/>Journal of Cheminformatics (2025)</li>
       </ul>
-      <p><a href="publications.html">View selected publications →</a></p>
+      <p><a href="publications.html">View all selected publications →</a></p>
     </section>
   </main>
 
   <footer>
-    <div class="container">
+    <div class="footer-inner">
       <div>
-        <div>LSAIL — Life Science and AI Lab</div>
-        <div class="small">Computational Biology, Life Science, and Artificial Intelligence</div>
+        <div class="footer-brand">
+          <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+          <strong>LSAIL</strong>
+        </div>
+        <p>Life Science and AI Lab<br/>Computational Biology · Life Science · Artificial Intelligence</p>
       </div>
-      <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+      <div>
+        <h4>Contact</h4>
+        <p>Department of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
+        <p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <p>
+          <a href="people.html">People</a><br/>
+          <a href="research.html">Research</a><br/>
+          <a href="publications.html">Publications</a><br/>
+          <a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LSAIL — Life Science and AI Lab. All Rights Reserved.</span>
+      <span>Chonnam National University</span>
     </div>
   </footer>
 </body>

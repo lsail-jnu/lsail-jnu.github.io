@@ -1,13 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Contact | LSAIL</title><link rel="stylesheet" href="style.css" /></head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | LSAIL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-<header><div class="nav"><div class="brand">LSAIL</div><nav class="nav-links"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="teaching.html">Teaching</a><a href="people.html">People</a><a href="news.html">News</a><a href="contact.html">Contact</a></nav></div><div class="hero"><h1>Contact</h1><p class="lead">Get in touch with LSAIL.</p></div></header>
-<main class="container">
-<section class="section"><h2>Affiliation</h2><p>Department of Artificial Intelligence<br/>Chonnam National University</p></section>
-<section class="section"><h2>Email</h2><p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p></section>
-<section class="section"><h2>Profiles</h2><p><a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a><br/><a href="https://www.linkedin.com/in/hyunhokimdaniel">LinkedIn</a></p></section>
-<section class="section"><p>For collaboration, student inquiries, or research-related contact, please reach out by email.</p></section>
-</main>
-<footer><div class="container"><div>LSAIL</div></div></footer>
-</body></html>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand-wrap">
+        <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+        <div class="brand">LSAIL<small>Life Science and AI Lab</small></div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
+      <ul class="mainnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="news.html">News</a></li>
+        <li class="active"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="pagehero">
+    <h1>Contact</h1>
+    <p>Be in touch with LSAIL.</p>
+  </section>
+
+  <main class="container">
+
+    <!-- ============================================================
+         [EDIT HERE] CONTACT DETAILS
+         - Update email / office address / phone as needed
+         ============================================================ -->
+    <section class="section">
+      <div class="grid">
+        <div class="card">
+          <div class="badge">AFFILIATION</div>
+          <h3>LSAIL</h3>
+          <p>Department of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
+        </div>
+        <div class="card">
+          <div class="badge">EMAIL</div>
+          <h3>Get in touch</h3>
+          <p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
+        </div>
+        <div class="card">
+          <div class="badge">PROFILES</div>
+          <h3>Online</h3>
+          <p>
+            <a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a><br/>
+            <a href="https://www.linkedin.com/in/hyunhokimdaniel">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="feature-band">
+        <h2 style="margin-top:0">Be in Touch</h2>
+        <p>For collaboration, student inquiries, or research-related contact, please reach out by email.</p>
+        <p>We welcome prospective graduate and undergraduate students interested in AI, computational biology, and drug discovery.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+          <strong>LSAIL</strong>
+        </div>
+        <p>Life Science and AI Lab<br/>Computational Biology · Life Science · Artificial Intelligence</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Department of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
+        <p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <p>
+          <a href="people.html">People</a><br/>
+          <a href="research.html">Research</a><br/>
+          <a href="publications.html">Publications</a><br/>
+          <a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LSAIL — Life Science and AI Lab. All Rights Reserved.</span>
+      <span>Chonnam National University</span>
+    </div>
+  </footer>
+</body>
+</html>

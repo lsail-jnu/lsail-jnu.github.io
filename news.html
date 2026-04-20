@@ -1,10 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>News | LSAIL</title><link rel="stylesheet" href="style.css" /></head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News | LSAIL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-<header><div class="nav"><div class="brand">LSAIL</div><nav class="nav-links"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="teaching.html">Teaching</a><a href="people.html">People</a><a href="news.html">News</a><a href="contact.html">Contact</a></nav></div><div class="hero"><h1>News</h1><p class="lead">Updates from the lab.</p></div></header>
-<main class="container">
-<section class="section"><p>News and updates from LSAIL will be posted here.</p></section>
-</main>
-<footer><div class="container"><div>LSAIL</div></div></footer>
-</body></html>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand-wrap">
+        <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+        <div class="brand">LSAIL<small>Life Science and AI Lab</small></div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
+      <ul class="mainnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html">People</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li class="active"><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="pagehero">
+    <h1>News</h1>
+    <p>Updates from the lab.</p>
+  </section>
+
+  <main class="container">
+
+    <!-- ============================================================
+         [EDIT HERE] NEWS ITEMS
+         - Add a new <div class="card"> at the TOP for the latest news
+         - Date format: YYYY-MM-DD (or "Month Year")
+         - Keep items in reverse chronological order (newest first)
+         ============================================================ -->
+
+    <section class="section">
+      <div class="grid">
+
+        <!-- NEWS ITEM TEMPLATE — copy this block to add a new news item -->
+        <div class="card">
+          <div class="badge">2026-04</div>
+          <h3>Website launched</h3>
+          <p>The LSAIL website has been published. News and updates will be posted here.</p>
+        </div>
+        <!-- /NEWS ITEM TEMPLATE -->
+
+        <!-- Example: add future items above this line, following the same card pattern. -->
+        <!--
+        <div class="card">
+          <div class="badge">YYYY-MM</div>
+          <h3>Headline of the news</h3>
+          <p>One or two sentence summary, with optional <a href="URL">link</a>.</p>
+        </div>
+        -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+          <strong>LSAIL</strong>
+        </div>
+        <p>Life Science and AI Lab<br/>Computational Biology · Life Science · Artificial Intelligence</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Department of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
+        <p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <p>
+          <a href="people.html">People</a><br/>
+          <a href="research.html">Research</a><br/>
+          <a href="publications.html">Publications</a><br/>
+          <a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LSAIL — Life Science and AI Lab. All Rights Reserved.</span>
+      <span>Chonnam National University</span>
+    </div>
+  </footer>
+</body>
+</html>

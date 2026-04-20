@@ -1,21 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>People | LSAIL</title><link rel="stylesheet" href="style.css" /></head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>People | LSAIL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-<header><div class="nav"><div class="brand-wrap"><img src="assets/cnu-logotype.png" alt="Chonnam National University" /><div class="brand">LSAIL</div></div><nav class="nav-links"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="teaching.html">Teaching</a><a href="people.html">People</a><a href="news.html">News</a><a href="contact.html">Contact</a></nav></div><div class="hero"><div><h1>People</h1><p class="lead">Members of LSAIL.</p></div></div></header>
-<main class="container">
-<section class="section">
-  <div class="people-box">
-    <img src="assets/hyunho-kim.jpg" alt="Hyunho Kim" />
-    <div>
-      <h2>Hyunho Kim</h2>
-      <p>Department of Artificial Intelligence<br/>Chonnam National University</p>
-      <p><strong>Research Interests</strong><br/>Computational Biology, AI for Life Science, Drug Discovery, Toxicity and Safety Prediction, Biology-aware Molecular Representation Learning, Genotype/Phenotype-guided Modeling</p>
-      <p><a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a> · <a href="https://www.linkedin.com/in/hyunhokimdaniel">LinkedIn</a></p>
+  <!-- ============================================================
+       SHARED TOP BAR — keep identical to index.html (do not edit per page)
+       ============================================================ -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand-wrap">
+        <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+        <div class="brand">LSAIL<small>Life Science and AI Lab</small></div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
+      <ul class="mainnav">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="people.html">People</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </div>
-</section>
-<section class="section"><h2>Students / Researchers</h2><p>To be updated.</p></section>
-</main>
-<footer><div class="container"><div>LSAIL</div><img src="assets/cnu-logotype.png" alt="Chonnam National University" /></div></footer>
-</body></html>
+  </header>
+
+  <section class="pagehero">
+    <h1>People</h1>
+    <p>Members of LSAIL.</p>
+  </section>
+
+  <main class="container">
+
+    <!-- ============================================================
+         [EDIT HERE] PRINCIPAL INVESTIGATOR
+         - Replace name / department / research interests / links
+         - Replace assets/hyunho-kim.jpg with a new photo if needed
+         ============================================================ -->
+    <section class="section" id="pi">
+      <div class="section-title">
+        <div class="eyebrow">Principal Investigator</div>
+        <h2>PI</h2>
+      </div>
+      <div class="people-box">
+        <img src="assets/hyunho-kim.jpg" alt="Hyunho Kim" />
+        <div>
+          <h2>Hyunho Kim</h2>
+          <p>Department of Artificial Intelligence<br/>Chonnam National University</p>
+          <p><strong>Research Interests</strong><br/>Computational Biology, AI for Life Science, Drug Discovery, Toxicity and Safety Prediction, Biology-aware Molecular Representation Learning, Genotype/Phenotype-guided Modeling</p>
+          <p>
+            <a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a> ·
+            <a href="https://www.linkedin.com/in/hyunhokimdaniel">LinkedIn</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [EDIT HERE] MEMBERS
+         - Duplicate the <div class="card"> block for each new member
+         - Fields: name, role (e.g., MS student / PhD student / Intern), short bio
+         - Replace "TBD" placeholders with real content
+         ============================================================ -->
+    <section class="section" id="members">
+      <div class="section-title">
+        <div class="eyebrow">Team</div>
+        <h2>Students &amp; Researchers</h2>
+        <p>We are looking for motivated students. See <a href="contact.html">Contact</a> to apply.</p>
+      </div>
+      <div class="grid">
+        <!-- MEMBER CARD TEMPLATE — copy this block to add a new member -->
+        <div class="card">
+          <div class="badge">MS STUDENT</div>
+          <h3>TBD</h3>
+          <p>Short bio or research focus here.</p>
+        </div>
+        <!-- /MEMBER CARD TEMPLATE -->
+
+        <div class="card">
+          <div class="badge">UNDERGRAD</div>
+          <h3>TBD</h3>
+          <p>Short bio or research focus here.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [EDIT HERE] ALUMNI (optional)
+         - Remove this section if you don't want to show alumni yet
+         - Each <li>: name — current position / year
+         ============================================================ -->
+    <section class="section" id="alumni">
+      <div class="section-title">
+        <div class="eyebrow">Alumni</div>
+        <h2>Alumni</h2>
+      </div>
+      <ul class="simple-list">
+        <li>TBD — current position (graduation year)</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SHARED FOOTER — keep identical to index.html
+       ============================================================ -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+          <strong>LSAIL</strong>
+        </div>
+        <p>Life Science and AI Lab<br/>Computational Biology · Life Science · Artificial Intelligence</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Department of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
+        <p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <p>
+          <a href="people.html">People</a><br/>
+          <a href="research.html">Research</a><br/>
+          <a href="publications.html">Publications</a><br/>
+          <a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LSAIL — Life Science and AI Lab. All Rights Reserved.</span>
+      <span>Chonnam National University</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,18 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Research | LSAIL</title><link rel="stylesheet" href="style.css" /></head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research | LSAIL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-<header><div class="nav"><div class="brand">LSAIL</div><nav class="nav-links"><a href="index.html">Home</a><a href="research.html">Research</a><a href="publications.html">Publications</a><a href="teaching.html">Teaching</a><a href="people.html">People</a><a href="news.html">News</a><a href="contact.html">Contact</a></nav></div><div class="hero"><h1>Research</h1><p class="lead">AI methods for computational biology and life science.</p></div></header>
-<main class="container">
-<section class="section"><p>LSAIL investigates AI methods that are biologically grounded, practically useful, and scientifically reliable, while remaining broad enough to address diverse biological and biomedical problems.</p></section>
-<section class="section"><div class="grid">
-<div class="card"><h3>AI for Computational Biology</h3><p>Machine learning methods for understanding biological systems through molecular, cellular, and multi-omics data.</p></div>
-<div class="card"><h3>AI for Drug Discovery</h3><p>Computational approaches for molecular discovery, virtual screening, candidate prioritization, and molecular design.</p></div>
-<div class="card"><h3>Toxicity and Safety Prediction</h3><p>Robust, reliable, and interpretable models for hERG, hepatotoxicity, genotoxicity, and related ADMET problems.</p></div>
-<div class="card"><h3>Biology-aware Molecular Representation Learning</h3><p>Representations improved by phenotype, genotype, transcriptomics, morphology, and other omics signals.</p></div>
-<div class="card"><h3>Genotype/Phenotype-guided Modeling and Design</h3><p>Models that connect biological state information with molecular prediction and design.</p></div>
-<div class="card"><h3>Multimodal Learning for Life Science</h3><p>AI systems that bridge chemical and biological modalities to support translational research.</p></div>
-</div></section>
-</main>
-<footer><div class="container"><div>LSAIL</div></div></footer>
-</body></html>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand-wrap">
+        <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+        <div class="brand">LSAIL<small>Life Science and AI Lab</small></div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
+      <ul class="mainnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="people.html">People</a></li>
+        <li class="active"><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="pagehero">
+    <h1>Research</h1>
+    <p>AI methods for computational biology and life science.</p>
+  </section>
+
+  <main class="container">
+    <section class="section">
+      <p class="lead">LSAIL investigates AI methods that are biologically grounded, practically useful, and scientifically reliable, while remaining broad enough to address diverse biological and biomedical problems.</p>
+    </section>
+
+    <!-- ============================================================
+         [EDIT HERE] RESEARCH AREAS
+         - Each <div class="card"> is one research area
+         - Add / remove / reorder cards as needed
+         ============================================================ -->
+    <section class="section">
+      <div class="grid">
+        <div class="card" id="computational-biology">
+          <h3>AI for Computational Biology</h3>
+          <p>Machine learning methods for understanding biological systems through molecular, cellular, and multi-omics data.</p>
+        </div>
+        <div class="card" id="drug-discovery">
+          <h3>AI for Drug Discovery</h3>
+          <p>Computational approaches for molecular discovery, virtual screening, candidate prioritization, and molecular design.</p>
+        </div>
+        <div class="card">
+          <h3>Toxicity and Safety Prediction</h3>
+          <p>Robust, reliable, and interpretable models for hERG, hepatotoxicity, genotoxicity, and related ADMET problems.</p>
+        </div>
+        <div class="card">
+          <h3>Biology-aware Molecular Representation Learning</h3>
+          <p>Representations improved by phenotype, genotype, transcriptomics, morphology, and other omics signals.</p>
+        </div>
+        <div class="card">
+          <h3>Genotype/Phenotype-guided Modeling and Design</h3>
+          <p>Models that connect biological state information with molecular prediction and design.</p>
+        </div>
+        <div class="card">
+          <h3>Multimodal Learning for Life Science</h3>
+          <p>AI systems that bridge chemical and biological modalities to support translational research.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+          <strong>LSAIL</strong>
+        </div>
+        <p>Life Science and AI Lab<br/>Computational Biology · Life Science · Artificial Intelligence</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Department of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
+        <p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <p>
+          <a href="people.html">People</a><br/>
+          <a href="research.html">Research</a><br/>
+          <a href="publications.html">Publications</a><br/>
+          <a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LSAIL — Life Science and AI Lab. All Rights Reserved.</span>
+      <span>Chonnam National University</span>
+    </div>
+  </footer>
+</body>
+</html>
