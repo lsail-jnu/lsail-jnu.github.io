@@ -13,16 +13,39 @@
         <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
         <div class="brand">LSAIL<small>Life Science and AI Lab</small></div>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
-      <ul class="mainnav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="people.html">People</a></li>
-        <li class="active"><a href="research.html">Research</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu"
+              onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
+      <nav class="mainnav">
+        <div class="nav-item"><a href="introduce.html">Introduce</a></div>
+        <div class="nav-item">
+          <a href="people.html">People</a>
+          <div class="dropdown">
+            <a href="people.html#professor">Professor</a>
+            <a href="people.html#members">Members</a>
+            <a href="people.html#alumni">Alumni</a>
+          </div>
+        </div>
+        <div class="nav-item active">
+          <a href="research.html">Research</a>
+          <div class="dropdown">
+            <a href="research.html#overview">Overview</a>
+            <a href="research.html#methods">Methods</a>
+            <a href="research.html#projects">Projects</a>
+            <a href="research.html#links">Links</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="publications.html">Publications</a>
+          <div class="dropdown">
+            <a href="publications.html#journals">Journals</a>
+            <a href="publications.html#conferences">Conferences</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="news.html">News</a></div>
+        <div class="nav-item"><a href="patents.html">Patents</a></div>
+        <div class="nav-item"><a href="lecture.html">Lecture</a></div>
+        <div class="nav-item"><a href="album.html">Album</a></div>
+      </nav>
     </div>
   </header>
 
@@ -32,43 +55,93 @@
   </section>
 
   <main class="container">
-    <section class="section">
+
+    <!-- ============================================================
+         [EDIT HERE] OVERVIEW — short, high-level summary
+         ============================================================ -->
+    <section class="section" id="overview">
+      <div class="section-title">
+        <div class="eyebrow">Overview</div>
+        <h2>Research Overview</h2>
+      </div>
       <p class="lead">LSAIL investigates AI methods that are biologically grounded, practically useful, and scientifically reliable, while remaining broad enough to address diverse biological and biomedical problems.</p>
     </section>
 
     <!-- ============================================================
-         [EDIT HERE] RESEARCH AREAS
-         - Each <div class="card"> is one research area
+         [EDIT HERE] METHODS — research areas as cards
          - Add / remove / reorder cards as needed
          ============================================================ -->
-    <section class="section">
+    <section class="section" id="methods">
+      <div class="section-title">
+        <div class="eyebrow">Methods</div>
+        <h2>Research Areas</h2>
+      </div>
       <div class="grid">
-        <div class="card" id="computational-biology">
+        <div class="card">
+          <div class="badge">AREA 01</div>
           <h3>AI for Computational Biology</h3>
           <p>Machine learning methods for understanding biological systems through molecular, cellular, and multi-omics data.</p>
         </div>
-        <div class="card" id="drug-discovery">
+        <div class="card">
+          <div class="badge">AREA 02</div>
           <h3>AI for Drug Discovery</h3>
           <p>Computational approaches for molecular discovery, virtual screening, candidate prioritization, and molecular design.</p>
         </div>
         <div class="card">
+          <div class="badge">AREA 03</div>
           <h3>Toxicity and Safety Prediction</h3>
           <p>Robust, reliable, and interpretable models for hERG, hepatotoxicity, genotoxicity, and related ADMET problems.</p>
         </div>
         <div class="card">
-          <h3>Biology-aware Molecular Representation Learning</h3>
+          <div class="badge">AREA 04</div>
+          <h3>Biology-aware Representation Learning</h3>
           <p>Representations improved by phenotype, genotype, transcriptomics, morphology, and other omics signals.</p>
         </div>
         <div class="card">
-          <h3>Genotype/Phenotype-guided Modeling and Design</h3>
+          <div class="badge">AREA 05</div>
+          <h3>Genotype/Phenotype-guided Modeling</h3>
           <p>Models that connect biological state information with molecular prediction and design.</p>
         </div>
         <div class="card">
+          <div class="badge">AREA 06</div>
           <h3>Multimodal Learning for Life Science</h3>
-          <p>AI systems that bridge chemical and biological modalities to support translational research.</p>
+          <p>AI systems that bridge chemical and biological modalities for translational research.</p>
         </div>
       </div>
     </section>
+
+    <!-- ============================================================
+         [EDIT HERE] PROJECTS — ongoing / featured projects
+         - Duplicate <div class="card"> for each project
+         ============================================================ -->
+    <section class="section" id="projects">
+      <div class="section-title">
+        <div class="eyebrow">Projects</div>
+        <h2>Ongoing Projects</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <h3>TBD — Project title</h3>
+          <p>Short description of the project (funder, timeline, collaborators, goal).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [EDIT HERE] LINKS — external resources, code repos, datasets
+         ============================================================ -->
+    <section class="section" id="links">
+      <div class="section-title">
+        <div class="eyebrow">Links</div>
+        <h2>Resources</h2>
+      </div>
+      <ul class="simple-list">
+        <li><a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a></li>
+        <li>TBD — GitHub / code repository</li>
+        <li>TBD — Datasets / benchmarks</li>
+      </ul>
+    </section>
+
   </main>
 
   <footer>

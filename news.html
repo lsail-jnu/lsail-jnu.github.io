@@ -13,54 +13,94 @@
         <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
         <div class="brand">LSAIL<small>Life Science and AI Lab</small></div>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
-      <ul class="mainnav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="people.html">People</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="publications.html">Publications</a></li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li class="active"><a href="news.html">News</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <button class="nav-toggle" aria-label="Toggle menu"
+              onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
+      <nav class="mainnav">
+        <div class="nav-item"><a href="introduce.html">Introduce</a></div>
+        <div class="nav-item">
+          <a href="people.html">People</a>
+          <div class="dropdown">
+            <a href="people.html#professor">Professor</a>
+            <a href="people.html#members">Members</a>
+            <a href="people.html#alumni">Alumni</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="research.html">Research</a>
+          <div class="dropdown">
+            <a href="research.html#overview">Overview</a>
+            <a href="research.html#methods">Methods</a>
+            <a href="research.html#projects">Projects</a>
+            <a href="research.html#links">Links</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="publications.html">Publications</a>
+          <div class="dropdown">
+            <a href="publications.html#journals">Journals</a>
+            <a href="publications.html#conferences">Conferences</a>
+          </div>
+        </div>
+        <div class="nav-item active"><a href="news.html">News</a></div>
+        <div class="nav-item"><a href="patents.html">Patents</a></div>
+        <div class="nav-item"><a href="lecture.html">Lecture</a></div>
+        <div class="nav-item"><a href="album.html">Album</a></div>
+      </nav>
     </div>
   </header>
 
   <section class="pagehero">
     <h1>News</h1>
-    <p>Updates from the lab.</p>
+    <p>Updates, articles, and announcements from LSAIL.</p>
   </section>
 
   <main class="container">
 
     <!-- ============================================================
-         [EDIT HERE] NEWS ITEMS
-         - Add a new <div class="card"> at the TOP for the latest news
-         - Date format: YYYY-MM-DD (or "Month Year")
+         [EDIT HERE] NEWS ARTICLES
+         - Add a new <article class="news-article"> at the TOP for the latest post
          - Keep items in reverse chronological order (newest first)
+         - Each article has:
+             * data-featured image (optional, shown as thumbnail)
+             * date
+             * title
+             * body paragraphs (can be a single paragraph or longer write-up)
+             * optional links at the bottom
          ============================================================ -->
 
     <section class="section">
-      <div class="grid">
 
-        <!-- NEWS ITEM TEMPLATE — copy this block to add a new news item -->
-        <div class="card">
-          <div class="badge">2026-04</div>
-          <h3>Website launched</h3>
-          <p>The LSAIL website has been published. News and updates will be posted here.</p>
+      <!-- NEWS ARTICLE TEMPLATE — copy this block to add a new article -->
+      <article class="news-article">
+        <img class="news-article-img" src="assets/hero.jpg" alt="Featured image" />
+        <div class="news-article-body">
+          <div class="news-date">2026-04-20</div>
+          <h2>Website launched</h2>
+          <p>The LSAIL website has been published. News and updates will be posted here, including lab activities, publications, awards, and recruitment announcements.</p>
+          <p><a href="#">Read more →</a></p>
         </div>
-        <!-- /NEWS ITEM TEMPLATE -->
+      </article>
+      <!-- /NEWS ARTICLE TEMPLATE -->
 
-        <!-- Example: add future items above this line, following the same card pattern. -->
-        <!--
-        <div class="card">
-          <div class="badge">YYYY-MM</div>
-          <h3>Headline of the news</h3>
-          <p>One or two sentence summary, with optional <a href="URL">link</a>.</p>
+      <article class="news-article">
+        <img class="news-article-img" src="assets/molecule.jpg" alt="Featured image" />
+        <div class="news-article-body">
+          <div class="news-date">YYYY-MM-DD</div>
+          <h2>Headline of the news article</h2>
+          <p>Write your article body here — one or more paragraphs describing the news, announcement, award, or event.</p>
+          <p>You can link to external resources, papers, or press releases: <a href="#">Example link</a>.</p>
         </div>
-        -->
+      </article>
 
-      </div>
+      <article class="news-article">
+        <img class="news-article-img" src="assets/drug.jpg" alt="Featured image" />
+        <div class="news-article-body">
+          <div class="news-date">YYYY-MM-DD</div>
+          <h2>Headline of the news article</h2>
+          <p>Write your article body here.</p>
+        </div>
+      </article>
+
     </section>
 
   </main>

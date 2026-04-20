@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>People | LSAIL</title>
+  <title>Patents | LSAIL</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -17,7 +17,7 @@
               onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
       <nav class="mainnav">
         <div class="nav-item"><a href="introduce.html">Introduce</a></div>
-        <div class="nav-item active">
+        <div class="nav-item">
           <a href="people.html">People</a>
           <div class="dropdown">
             <a href="people.html#professor">Professor</a>
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="nav-item"><a href="news.html">News</a></div>
-        <div class="nav-item"><a href="patents.html">Patents</a></div>
+        <div class="nav-item active"><a href="patents.html">Patents</a></div>
         <div class="nav-item"><a href="lecture.html">Lecture</a></div>
         <div class="nav-item"><a href="album.html">Album</a></div>
       </nav>
@@ -50,82 +50,32 @@
   </header>
 
   <section class="pagehero">
-    <h1>People</h1>
-    <p>Members of LSAIL.</p>
+    <h1>Patents</h1>
+    <p>Patents and intellectual property from LSAIL.</p>
   </section>
 
   <main class="container">
 
     <!-- ============================================================
-         [EDIT HERE] PROFESSOR
-         - Update name / department / research interests / links
-         - Replace assets/hyunho-kim.jpg with a new photo if needed
+         [EDIT HERE] PATENTS
+         - Each <li> format:
+             <strong>Patent title</strong><br/>
+             Inventors<br/>
+             Registration / Application number (Country, Year)
+         - Remove this placeholder <li> when adding real entries
          ============================================================ -->
-    <section class="section" id="professor">
+    <section class="section">
       <div class="section-title">
-        <div class="eyebrow">Professor</div>
-        <h2>Principal Investigator</h2>
+        <div class="eyebrow">Patents</div>
+        <h2>Registered &amp; Pending Patents</h2>
       </div>
-      <div class="people-box">
-        <img src="assets/hyunho-kim.jpg" alt="Hyunho Kim" />
-        <div>
-          <h2>Hyunho Kim</h2>
-          <p>Department of Artificial Intelligence<br/>Chonnam National University</p>
-          <p><strong>Research Interests</strong><br/>Computational Biology, AI for Life Science, Drug Discovery, Toxicity and Safety Prediction, Biology-aware Molecular Representation Learning, Genotype/Phenotype-guided Modeling</p>
-          <p>
-            <a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a> ·
-            <a href="https://www.linkedin.com/in/hyunhokimdaniel">LinkedIn</a> ·
-            <a href="mailto:khh0115@gmail.com">Email</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         [EDIT HERE] MEMBERS
-         - Duplicate <div class="card"> for each new member
-         - Fields: role badge, name, bio or research focus
-         ============================================================ -->
-    <section class="section" id="members">
-      <div class="section-title">
-        <div class="eyebrow">Team</div>
-        <h2>Members</h2>
-        <p>Graduate and undergraduate researchers at LSAIL.</p>
-      </div>
-      <div class="grid">
-        <!-- MEMBER CARD TEMPLATE — copy this block to add a new member -->
-        <div class="card">
-          <div class="badge">PHD STUDENT</div>
-          <h3>TBD</h3>
-          <p>Research focus here.</p>
-        </div>
-        <!-- /MEMBER CARD TEMPLATE -->
-
-        <div class="card">
-          <div class="badge">MS STUDENT</div>
-          <h3>TBD</h3>
-          <p>Research focus here.</p>
-        </div>
-        <div class="card">
-          <div class="badge">UNDERGRAD</div>
-          <h3>TBD</h3>
-          <p>Research focus here.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         [EDIT HERE] ALUMNI
-         - Format: name — current position (graduation year)
-         ============================================================ -->
-    <section class="section" id="alumni">
-      <div class="section-title">
-        <div class="eyebrow">Alumni</div>
-        <h2>Alumni</h2>
-      </div>
-      <ul class="simple-list">
-        <li>TBD — current position (graduation year)</li>
-      </ul>
+      <ol class="pubs">
+        <li>
+          <strong>TBD — Patent title</strong><br/>
+          Inventors<br/>
+          Registration No. / Application No. (Country, Year)
+        </li>
+      </ol>
     </section>
 
   </main>

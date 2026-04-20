@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduce | LSAIL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand-wrap">
+        <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+        <div class="brand">LSAIL<small>Life Science and AI Lab</small></div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu"
+              onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
+      <nav class="mainnav">
+        <div class="nav-item active"><a href="introduce.html">Introduce</a></div>
+        <div class="nav-item">
+          <a href="people.html">People</a>
+          <div class="dropdown">
+            <a href="people.html#professor">Professor</a>
+            <a href="people.html#members">Members</a>
+            <a href="people.html#alumni">Alumni</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="research.html">Research</a>
+          <div class="dropdown">
+            <a href="research.html#overview">Overview</a>
+            <a href="research.html#methods">Methods</a>
+            <a href="research.html#projects">Projects</a>
+            <a href="research.html#links">Links</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="publications.html">Publications</a>
+          <div class="dropdown">
+            <a href="publications.html#journals">Journals</a>
+            <a href="publications.html#conferences">Conferences</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="news.html">News</a></div>
+        <div class="nav-item"><a href="patents.html">Patents</a></div>
+        <div class="nav-item"><a href="lecture.html">Lecture</a></div>
+        <div class="nav-item"><a href="album.html">Album</a></div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pagehero">
+    <h1>Introduce</h1>
+    <p>About Life Science and AI Lab.</p>
+  </section>
+
+  <main class="container">
+
+    <!-- ============================================================
+         [EDIT HERE] LAB INTRODUCTION
+         - Main paragraphs describing the lab's mission and scope
+         ============================================================ -->
+    <section class="section">
+      <div class="section-title">
+        <div class="eyebrow">About</div>
+        <h2>AI for Drug Discovery &amp; Computational Biology</h2>
+      </div>
+      <div class="feature">
+        <img src="assets/molecule.jpg" alt="Molecular research" />
+        <div>
+          <h3>Biologically Informed AI, from Molecule to Patient</h3>
+          <p>LSAIL is a research group at Chonnam National University developing AI methods that span the entire drug discovery pipeline — <strong>molecular design, virtual screening, safety prediction,</strong> and <strong>translational interpretation</strong>.</p>
+          <p>We work at the intersection of <em>computational biology</em>, <em>cheminformatics</em>, and <em>deep learning</em>, with a strong emphasis on building models that are biologically grounded, interpretable, and reliable enough to be useful in real discovery workflows.</p>
+          <p>Our research program builds on foundational contributions to AI-driven drug discovery — including widely cited work on <strong>hERG channel blocker prediction</strong> (<em>hERG-Att</em>, <em>BayeshERG</em>), a <strong>comprehensive review of AI in drug discovery</strong>, and more recent advances in <strong>generative models</strong> such as a <strong>genotype-to-drug diffusion model</strong> for tailored anti-cancer therapeutics (<em>Nature Communications</em>, 2025).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [EDIT HERE] MISSION / VISION
+         - Short mission statement and research philosophy
+         ============================================================ -->
+    <section class="section">
+      <div class="section-title">
+        <div class="eyebrow">Mission</div>
+        <h2>Our Mission</h2>
+      </div>
+      <div class="feature-band">
+        <p><strong>We build biologically informed AI that accelerates drug discovery — from generative molecular design to safety prediction and personalized therapeutics.</strong></p>
+        <p>Our research is guided by three principles:</p>
+        <p>① <strong>Biology-aware.</strong> Chemistry alone is not enough. We integrate genotype, phenotype, transcriptomics, and morphology so that models reflect the biological systems they aim to predict.</p>
+        <p>② <strong>Reliable &amp; interpretable.</strong> Safety-critical predictions (hERG, ADMET, in vivo toxicity) demand calibrated uncertainty and explanations clinicians and chemists can trust — not black boxes.</p>
+        <p>③ <strong>Translational.</strong> We aim for methods that scale to realistic screening and design problems and connect back to biological endpoints relevant to patients.</p>
+        <p>We also train the next generation of researchers working at the intersection of AI, cheminformatics, and life science.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [EDIT HERE] FOCUS AREAS — summarize core research themes
+         ============================================================ -->
+    <section class="section">
+      <div class="section-title">
+        <div class="eyebrow">Focus</div>
+        <h2>Research Focus</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="badge">DRUG DESIGN</div>
+          <h3>Generative Molecular Design</h3>
+          <p>Diffusion and generative models for small-molecule design, including genotype-conditioned design for personalized, tailored therapeutics.</p>
+        </div>
+        <div class="card">
+          <div class="badge">SAFETY</div>
+          <h3>Cardiac Toxicity (hERG)</h3>
+          <p>Attention-based and Bayesian deep learning (hERG-Att, BayeshERG) for robust, interpretable prediction of hERG channel blockers.</p>
+        </div>
+        <div class="card">
+          <div class="badge">ADMET</div>
+          <h3>In Vivo Toxicity Prediction</h3>
+          <p>Multi-task learning that transfers knowledge from chemical structure and in vitro assays to predict in vivo toxicity endpoints.</p>
+        </div>
+        <div class="card">
+          <div class="badge">REPRESENTATION</div>
+          <h3>Biology-aware Molecular Representation</h3>
+          <p>Molecular embeddings enriched with genotype, phenotype, transcriptomics, and morphological information from multi-omics data.</p>
+        </div>
+        <div class="card">
+          <div class="badge">SCREENING</div>
+          <h3>Virtual Screening &amp; Prioritization</h3>
+          <p>Data-driven virtual screening pipelines and candidate prioritization for hit identification and lead optimization.</p>
+        </div>
+        <div class="card">
+          <div class="badge">MULTIMODAL</div>
+          <h3>Chemistry × Biology Multimodal Learning</h3>
+          <p>Models that jointly reason over chemical and biological modalities to bridge molecular design and translational endpoints.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         [EDIT HERE] AFFILIATION / LOCATION
+         - Update department, building, address
+         ============================================================ -->
+    <section class="section">
+      <div class="section-title">
+        <div class="eyebrow">Affiliation</div>
+        <h2>Where We Are</h2>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="badge">DEPARTMENT</div>
+          <h3>Artificial Intelligence</h3>
+          <p>Department of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
+        </div>
+        <div class="card">
+          <div class="badge">CONTACT</div>
+          <h3>Get in Touch</h3>
+          <p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
+          <p><a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a> · <a href="https://www.linkedin.com/in/hyunhokimdaniel">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+          <strong>LSAIL</strong>
+        </div>
+        <p>Life Science and AI Lab<br/>Computational Biology · Life Science · Artificial Intelligence</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Department of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
+        <p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <p>
+          <a href="people.html">People</a><br/>
+          <a href="research.html">Research</a><br/>
+          <a href="publications.html">Publications</a><br/>
+          <a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LSAIL — Life Science and AI Lab. All Rights Reserved.</span>
+      <span>Chonnam National University</span>
+    </div>
+  </footer>
+</body>
+</html>

@@ -4,142 +4,192 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LSAIL | Life Science and AI Lab</title>
-  <meta name="description" content="Life Science and AI Lab (LSAIL) at Chonnam National University — AI for Computational Biology." />
+  <meta name="description" content="Life Science and AI Lab (LSAIL) — Chonnam National University. AI for Computational Biology." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- ============================================================
+       SHARED TOP BAR — copy this block to every page, changing only
+       the 'active' class on the current page's nav item
+       ============================================================ -->
   <header class="topbar">
     <div class="topbar-inner">
       <a href="index.html" class="brand-wrap">
         <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
         <div class="brand">LSAIL<small>Life Science and AI Lab</small></div>
       </a>
-      <button class="nav-toggle" aria-label="Toggle menu" onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
-      <ul class="mainnav">
-        <li class="active"><a href="index.html">Home</a></li>
-        <li>
+      <button class="nav-toggle" aria-label="Toggle menu"
+              onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
+      <nav class="mainnav">
+        <div class="nav-item"><a href="introduce.html">Introduce</a></div>
+        <div class="nav-item">
           <a href="people.html">People</a>
-          <ul class="dropdown">
-            <li><a href="people.html#pi">Principal Investigator</a></li>
-            <li><a href="people.html#members">Members</a></li>
-          </ul>
-        </li>
-        <li>
+          <div class="dropdown">
+            <a href="people.html#professor">Professor</a>
+            <a href="people.html#members">Members</a>
+            <a href="people.html#alumni">Alumni</a>
+          </div>
+        </div>
+        <div class="nav-item">
           <a href="research.html">Research</a>
-          <ul class="dropdown">
-            <li><a href="research.html">Research Areas</a></li>
-            <li><a href="research.html#computational-biology">Computational Biology</a></li>
-            <li><a href="research.html#drug-discovery">Drug Discovery</a></li>
-          </ul>
-        </li>
-        <li>
+          <div class="dropdown">
+            <a href="research.html#overview">Overview</a>
+            <a href="research.html#methods">Methods</a>
+            <a href="research.html#projects">Projects</a>
+            <a href="research.html#links">Links</a>
+          </div>
+        </div>
+        <div class="nav-item">
           <a href="publications.html">Publications</a>
-          <ul class="dropdown">
-            <li><a href="publications.html">Selected</a></li>
-            <li><a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a></li>
-          </ul>
-        </li>
-        <li><a href="teaching.html">Teaching</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+          <div class="dropdown">
+            <a href="publications.html#journals">Journals</a>
+            <a href="publications.html#conferences">Conferences</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="news.html">News</a></div>
+        <div class="nav-item"><a href="patents.html">Patents</a></div>
+        <div class="nav-item"><a href="lecture.html">Lecture</a></div>
+        <div class="nav-item"><a href="album.html">Album</a></div>
+      </nav>
     </div>
   </header>
 
+  <!-- ============================================================
+       HERO
+       [EDIT HERE] Headline, tagline, and CTA buttons
+       ============================================================ -->
   <section class="hero">
     <div class="hero-inner">
       <span class="eyebrow">Chonnam National University</span>
       <h1>Welcome to Life Science and AI Lab</h1>
-      <p class="lead">LSAIL builds biologically informed AI for molecular, cellular, and translational discovery — connecting chemistry with phenotype, genotype, transcriptomics, and morphology.</p>
+      <p class="lead">LSAIL develops biologically informed AI for <strong>drug discovery</strong> and <strong>computational biology</strong> — from generative molecular design and safety prediction to genotype-guided, personalized therapeutics.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="research.html">Research</a>
-        <a class="btn btn-outline" href="contact.html">Be in Touch</a>
+        <a class="btn btn-outline" href="publications.html">Publications</a>
       </div>
     </div>
   </section>
 
+  <!-- ============================================================
+       RESEARCH AREA — BMIL-style 3-column preview
+       [EDIT HERE] Top-level research areas of the lab
+       ============================================================ -->
   <section class="preview-band">
+    <div class="section-title">
+      <div class="eyebrow">Research Area</div>
+      <h2>What We Do</h2>
+      <p>AI methods for drug discovery, drug safety, and computational biology — grounded in biology, built to be reliable.</p>
+    </div>
     <div class="preview-grid">
       <article class="preview-card">
-        <div class="cap">Research Area</div>
-        <h3>Computational Biology</h3>
-        <p>AI methods for understanding biological systems through molecular, cellular, and multi-omics data.</p>
-        <ul>
-          <li>Biology-aware molecular representation</li>
-          <li>Genotype / phenotype-guided modeling</li>
-          <li>Multimodal learning for life science</li>
-        </ul>
-        <a class="more" href="research.html">Learn more</a>
-      </article>
-
-      <article class="preview-card">
-        <div class="cap">Research Area</div>
+        <div class="cap">Area 01</div>
         <h3>AI for Drug Discovery</h3>
-        <p>Computational approaches for molecular discovery, virtual screening, candidate prioritization, and design.</p>
+        <p>Generative and predictive AI for molecular design, virtual screening, and candidate prioritization.</p>
         <ul>
-          <li>Toxicity &amp; safety prediction (hERG, ADMET)</li>
-          <li>Generative models for small molecules</li>
-          <li>Interpretable, reliable deep learning</li>
+          <li>Diffusion / generative models for small molecules</li>
+          <li>Genotype-to-drug personalized design</li>
+          <li>Virtual screening &amp; candidate prioritization</li>
         </ul>
         <a class="more" href="research.html">Learn more</a>
       </article>
 
       <article class="preview-card">
-        <div class="cap">People</div>
-        <h3>Join LSAIL</h3>
-        <p>We welcome graduate and undergraduate students interested in AI, computational biology, and drug discovery.</p>
+        <div class="cap">Area 02</div>
+        <h3>Drug Safety &amp; Toxicity</h3>
+        <p>Robust, interpretable deep learning for predicting cardiac toxicity and in vivo ADMET outcomes.</p>
         <ul>
-          <li>Department of Artificial Intelligence</li>
-          <li>Chonnam National University</li>
-          <li>Collaborations across life science</li>
+          <li>hERG channel blocker prediction</li>
+          <li>Multi-task in vivo toxicity prediction</li>
+          <li>Bayesian / uncertainty-aware deep learning</li>
         </ul>
-        <a class="more" href="contact.html">Be in Touch</a>
+        <a class="more" href="research.html">Learn more</a>
+      </article>
+
+      <article class="preview-card">
+        <div class="cap">Area 03</div>
+        <h3>Biology-aware AI</h3>
+        <p>Molecular representations enriched with genotype, phenotype, transcriptomics, and morphology.</p>
+        <ul>
+          <li>Biology-aware molecular representation learning</li>
+          <li>Multi-omics integration</li>
+          <li>Multimodal chemistry × biology learning</li>
+        </ul>
+        <a class="more" href="research.html">Learn more</a>
       </article>
     </div>
   </section>
 
-  <main class="container">
+  <!-- ============================================================
+       ABOUT / FEATURE BLOCK — CICL-style photo + text
+       [EDIT HERE] PI photo + short lab intro
+       ============================================================ -->
+  <div class="container">
     <section class="section">
       <div class="section-title">
-        <div class="eyebrow">About</div>
-        <h2>AI for Computational Biology</h2>
-        <p>LSAIL studies computational biology at the interface of life science and artificial intelligence, developing AI methods that connect molecular structures with biological context.</p>
+        <div class="eyebrow">About the Lab</div>
+        <h2>AI for Drug Discovery &amp; Computational Biology</h2>
+      </div>
+      <div class="feature">
+        <img src="assets/drug.jpg" alt="AI for drug discovery" />
+        <div>
+          <h3>Biologically Informed AI, from Molecule to Patient</h3>
+          <p>LSAIL builds AI methods that span the drug discovery pipeline — from <strong>generative molecular design</strong> and <strong>virtual screening</strong> to <strong>cardiac safety</strong> and <strong>in vivo toxicity</strong> prediction.</p>
+          <p>A central theme of our work is <em>biology-aware</em> learning: enriching molecular representations with genotype, phenotype, transcriptomics, and morphology so that AI models reflect real biological context — not just chemistry.</p>
+          <p>Recent work includes a <strong>genotype-to-drug diffusion model</strong> for generating tailored anti-cancer small molecules (<em>Nature Communications</em>, 2025) and robust, interpretable deep learning for <strong>hERG channel blocker</strong> prediction (<em>Briefings in Bioinformatics</em>, 2022).</p>
+          <p><a href="introduce.html">Read more →</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         JOIN US / RECRUITMENT
+         [EDIT HERE] Welcome message for prospective students
+         ============================================================ -->
+    <section class="section">
+      <div class="section-title">
+        <div class="eyebrow">Join Us</div>
+        <h2>We're Looking for Passionate Students</h2>
+        <p>If you're curious about how AI can accelerate drug discovery and change the way we understand biology — we'd love to hear from you.</p>
       </div>
       <div class="feature-band">
-        <p>We develop AI methods that connect molecular structures with biological context, including phenotype, genotype, transcriptomics, morphology, and other multimodal life science data.</p>
-        <p>Our work spans broad computational biology, with major applications in drug discovery, toxicity and safety prediction, and biology-aware molecular modeling.</p>
+        <p><strong>LSAIL is actively recruiting passionate and curious students</strong> — graduate (M.S. / Ph.D.) and undergraduate researchers — who want to work at the frontier of AI, drug discovery, and computational biology.</p>
+        <p>We don't require a perfect background. We care about curiosity, persistence, and a willingness to learn across fields. Students from <strong>computer science, AI, chemistry, biology, pharmacy, statistics,</strong> and related areas are all welcome — and so are undergrads who just want to try research for the first time.</p>
+        <p>What you'll do here:</p>
+        <p>• Work on real, publishable problems in AI-driven drug discovery and computational biology<br/>
+           • Learn deep learning, cheminformatics, and biology-aware modeling hands-on<br/>
+           • Collaborate across AI, biology, and chemistry — not just sit behind one screen<br/>
+           • Be supported as a researcher, not just a pair of hands</p>
+        <p><strong>Interested?</strong> Just send a short email introducing yourself and your interests — no formal cover letter needed: <a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
       </div>
     </section>
 
+    <!-- ============================================================
+         RECENT NEWS — AUTO-PULLED from news.html (top 5)
+         DO NOT edit news items here. Edit them in news.html only.
+         The static fallback below only shows if JS fetch fails
+         (e.g., when opening index.html via file:// locally).
+         ============================================================ -->
     <section class="section">
       <div class="section-title">
-        <div class="eyebrow">Research</div>
-        <h2>Research Areas</h2>
-        <p>Biologically grounded, practically useful, and scientifically reliable AI for life science.</p>
+        <div class="eyebrow">News</div>
+        <h2>Recent News</h2>
+        <p>Latest updates from the lab — auto-synced from the News page.</p>
       </div>
-      <div class="grid">
-        <div class="card"><div class="badge">AREA 01</div><h3>Computational Biology</h3><p>AI methods for molecular, cellular, and multi-omics data.</p></div>
-        <div class="card"><div class="badge">AREA 02</div><h3>Drug Discovery</h3><p>Virtual screening, candidate prioritization, and molecular design.</p></div>
-        <div class="card"><div class="badge">AREA 03</div><h3>Biology-aware Representation</h3><p>Molecular representations enriched with phenotype, genotype, transcriptomics, and morphology.</p></div>
-        <div class="card"><div class="badge">AREA 04</div><h3>Multimodal Learning</h3><p>Integrating chemical and biological information for translational research.</p></div>
+      <div class="news-list" id="recent-news">
+        <!-- Static fallback (only shown if fetch fails) -->
+        <article class="news-item">
+          <div class="date">2026-04</div>
+          <h3>Website launched</h3>
+          <p>The LSAIL website has been published.</p>
+        </article>
       </div>
+      <p style="text-align:center; margin-top:24px;"><a href="news.html">View all news →</a></p>
     </section>
+  </div>
 
-    <section class="section">
-      <div class="section-title">
-        <div class="eyebrow">Publications</div>
-        <h2>Selected Publications</h2>
-        <p>A sample of recent work from LSAIL.</p>
-      </div>
-      <ul class="pubs">
-        <li><strong>A genotype-to-drug diffusion model for generation of tailored anti-cancer small molecules</strong><br/>Nature Communications (2025)</li>
-        <li><strong>BayeshERG: a robust, reliable and interpretable deep learning model for predicting hERG channel blockers</strong><br/>Briefings in Bioinformatics (2022)</li>
-        <li><strong>Enhancing multi-task in vivo toxicity prediction via integrated knowledge transfer of chemical knowledge and in vitro toxicity information</strong><br/>Journal of Cheminformatics (2025)</li>
-      </ul>
-      <p><a href="publications.html">View all selected publications →</a></p>
-    </section>
-  </main>
-
+  <!-- ============================================================
+       SHARED FOOTER — copy this block verbatim to every page
+       ============================================================ -->
   <footer>
     <div class="footer-inner">
       <div>
@@ -169,5 +219,40 @@
       <span>Chonnam National University</span>
     </div>
   </footer>
+
+  <!-- ============================================================
+       Pulls the 5 most recent news items from news.html and renders
+       them into #recent-news. You do not need to touch this script —
+       just keep news.html as the single source of truth for news.
+       Note: fetch() requires HTTP(S), so locally via file:// the
+       static fallback items in #recent-news are shown instead.
+       ============================================================ -->
+  <script>
+    (function () {
+      var container = document.getElementById('recent-news');
+      if (!container) return;
+      fetch('news.html', { cache: 'no-cache' })
+        .then(function (r) { if (!r.ok) throw new Error('fetch failed'); return r.text(); })
+        .then(function (html) {
+          var doc = new DOMParser().parseFromString(html, 'text/html');
+          var articles = Array.prototype.slice.call(doc.querySelectorAll('.news-article'), 0, 5);
+          if (!articles.length) return;
+          container.innerHTML = '';
+          articles.forEach(function (a) {
+            var date  = (a.querySelector('.news-date') || {}).textContent || '';
+            var title = (a.querySelector('h2')         || {}).textContent || '';
+            var body  = (a.querySelector('p')          || {}).textContent || '';
+            var item = document.createElement('article');
+            item.className = 'news-item';
+            var d = document.createElement('div'); d.className = 'date'; d.textContent = date.trim();
+            var h = document.createElement('h3');                           h.textContent = title.trim();
+            var p = document.createElement('p');                            p.textContent = body.trim();
+            item.appendChild(d); item.appendChild(h); item.appendChild(p);
+            container.appendChild(item);
+          });
+        })
+        .catch(function () { /* leave static fallback in place */ });
+    })();
+  </script>
 </body>
 </html>

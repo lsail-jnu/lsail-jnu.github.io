@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Album | LSAIL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand-wrap">
+        <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+        <div class="brand">LSAIL<small>Life Science and AI Lab</small></div>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu"
+              onclick="document.querySelector('.mainnav').classList.toggle('open')">Menu</button>
+      <nav class="mainnav">
+        <div class="nav-item"><a href="introduce.html">Introduce</a></div>
+        <div class="nav-item">
+          <a href="people.html">People</a>
+          <div class="dropdown">
+            <a href="people.html#professor">Professor</a>
+            <a href="people.html#members">Members</a>
+            <a href="people.html#alumni">Alumni</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="research.html">Research</a>
+          <div class="dropdown">
+            <a href="research.html#overview">Overview</a>
+            <a href="research.html#methods">Methods</a>
+            <a href="research.html#projects">Projects</a>
+            <a href="research.html#links">Links</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="publications.html">Publications</a>
+          <div class="dropdown">
+            <a href="publications.html#journals">Journals</a>
+            <a href="publications.html#conferences">Conferences</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="news.html">News</a></div>
+        <div class="nav-item"><a href="patents.html">Patents</a></div>
+        <div class="nav-item"><a href="lecture.html">Lecture</a></div>
+        <div class="nav-item active"><a href="album.html">Album</a></div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="pagehero">
+    <h1>Album</h1>
+    <p>Photos and moments from LSAIL — click any photo to enlarge.</p>
+  </section>
+
+  <main class="container">
+
+    <!-- ============================================================
+         [EDIT HERE] PHOTO GALLERY
+         - Each <a class="album-item"> is one photo
+         - data-caption = optional caption shown in the lightbox overlay
+         - href = full-size image path (can be same as src for now)
+         - src  = thumbnail shown in the grid
+         - Recommended image ratio: 4:3 (grid will crop to 4:3)
+         - Just copy the PHOTO CARD TEMPLATE below to add a new photo
+         ============================================================ -->
+    <section class="section">
+      <div class="section-title">
+        <div class="eyebrow">Gallery</div>
+        <h2>Lab Moments</h2>
+      </div>
+      <div class="album-grid">
+
+        <!-- PHOTO CARD TEMPLATE — copy this block to add a new photo -->
+        <a class="album-item" href="assets/hero.jpg"
+           data-caption="Example caption — replace with your own">
+          <img src="assets/hero.jpg" alt="Event or moment" />
+          <div class="album-caption">
+            <div class="date">2026-04</div>
+            <h3>Event or moment</h3>
+            <p>Short caption or description.</p>
+          </div>
+        </a>
+        <!-- /PHOTO CARD TEMPLATE -->
+
+        <a class="album-item" href="assets/drug.jpg"
+           data-caption="Example caption — replace with your own">
+          <img src="assets/drug.jpg" alt="Event or moment" />
+          <div class="album-caption">
+            <div class="date">YYYY-MM</div>
+            <h3>Event or moment</h3>
+            <p>Short caption or description.</p>
+          </div>
+        </a>
+
+        <a class="album-item" href="assets/molecule.jpg"
+           data-caption="Example caption — replace with your own">
+          <img src="assets/molecule.jpg" alt="Event or moment" />
+          <div class="album-caption">
+            <div class="date">YYYY-MM</div>
+            <h3>Event or moment</h3>
+            <p>Short caption or description.</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       LIGHTBOX OVERLAY — do not edit; shared component
+       ============================================================ -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" aria-label="Close" onclick="closeLightbox(event)">×</button>
+    <img id="lightbox-img" src="" alt="" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+  </div>
+
+  <script>
+    (function () {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const lbCap = document.getElementById('lightbox-caption');
+      document.querySelectorAll('.album-item').forEach(function (a) {
+        a.addEventListener('click', function (e) {
+          e.preventDefault();
+          lbImg.src = a.getAttribute('href');
+          lbImg.alt = a.querySelector('img').alt || '';
+          lbCap.textContent = a.getAttribute('data-caption') || '';
+          lb.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      window.closeLightbox = function (e) {
+        if (e && e.target.tagName === 'IMG' && e.target.id === 'lightbox-img') return;
+        lb.classList.remove('open');
+        lbImg.src = '';
+        document.body.style.overflow = '';
+      };
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lb.classList.contains('open')) window.closeLightbox();
+      });
+    })();
+  </script>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/cnu-logotype.png" alt="Chonnam National University" />
+          <strong>LSAIL</strong>
+        </div>
+        <p>Life Science and AI Lab<br/>Computational Biology · Life Science · Artificial Intelligence</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Department of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
+        <p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
+      </div>
+      <div>
+        <h4>Links</h4>
+        <p>
+          <a href="people.html">People</a><br/>
+          <a href="research.html">Research</a><br/>
+          <a href="publications.html">Publications</a><br/>
+          <a href="https://scholar.google.com/citations?user=aBa2GYMAAAAJ&hl=ko">Google Scholar</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 LSAIL — Life Science and AI Lab. All Rights Reserved.</span>
+      <span>Chonnam National University</span>
+    </div>
+  </footer>
+</body>
+</html>
