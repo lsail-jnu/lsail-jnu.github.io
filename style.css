@@ -404,6 +404,43 @@ img { max-width: 100%; display: block; }
 .people-box h2 { color: var(--primary-dark); margin-bottom: 6px; }
 .people-box p + p { margin-top: 10px; }
 
+.member-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 220px));
+  gap: 18px;
+  justify-content: start;
+}
+
+.member-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 14px;
+  text-align: center;
+  box-shadow: 0 4px 14px rgba(22, 74, 48, 0.04);
+}
+
+.member-card img {
+  width: 95px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 8px auto 14px;
+  display: block;
+}
+
+.member-card h3 {
+  margin: 6px 0 6px;
+  font-size: 1rem;
+  color: var(--primary-dark);
+}
+
+.member-card p {
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
 /* ---------- Footer ---------- */
 footer {
   background: var(--primary-darker);
