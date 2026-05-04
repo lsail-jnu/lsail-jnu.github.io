@@ -387,17 +387,21 @@ img { max-width: 100%; display: block; }
 /* People box */
 .people-box {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 28px;
+  grid-template-columns: 160px 1fr;
+  gap: 24px;
   align-items: start;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 18px;
-  padding: 28px;
+  padding: 24px;
   box-shadow: 0 4px 14px rgba(22, 74, 48, 0.04);
 }
+
 .people-box img {
-  width: 100%;
+  width: 160px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center top;
   border-radius: 14px;
   box-shadow: 0 4px 14px rgba(22, 74, 48, 0.08);
 }
