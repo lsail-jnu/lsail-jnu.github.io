@@ -412,12 +412,12 @@ img { max-width: 100%; display: block; }
 }
 
 .member-card {
-  width: 180px;
-  flex: 0 0 180px;
+  width: 220px;
+  flex: 0 0 220px;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 16px 12px;
+  padding: 20px 16px;
   text-align: center;
   box-shadow: 0 4px 14px rgba(22, 74, 48, 0.04);
 }
