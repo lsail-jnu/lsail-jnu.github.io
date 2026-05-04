@@ -436,8 +436,9 @@ img { max-width: 100%; display: block; }
 }
 
 .member-card img {
-  width: 105px;
-  height: 105px;
+  width: 110px !important;
+  height: 110px !important;
+  max-width: none !important;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
