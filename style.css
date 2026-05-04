@@ -425,10 +425,11 @@ img { max-width: 100%; display: block; }
 .member-card .badge {
   display: inline-block;
   margin-bottom: 10px;
-  padding: 4px 9px;
+  padding: 4px 10px;
   border-radius: 999px;
   background: var(--bg-light);
-  color: var(--primary-dark);
+  color: var(--primary);
+  border: 1px solid var(--primary);
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.08em;
