@@ -359,7 +359,12 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   letter-spacing: 0.08em;
 }
-
+.card img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 .feature-band {
   background: var(--bg-light);
   border: 1px solid var(--border);
