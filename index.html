@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -148,30 +150,26 @@
         <p> Students from <strong>computer science, AI, chemistry, biology, pharmacy, statistics, mathmatics </strong> and related areas are all welcome</p>
         <p>What you'll do here:</p>
         <p>• Work on real, publishable problems in AI-driven drug discovery and computational biology<br/>
-           • Learn deep learning, bio & cheminformatics, and biology-aware modeling<br/>
+           • Learn deep learning, bio &amp; cheminformatics, and biology-aware modeling</p>
         <p><strong>Interested?</strong> Just send your CV and your interests <a href="mailto:hyunhokim@jnu.ac.kr">hyunhokim@jnu.ac.kr</a></p>
       </div>
     </section>
 
-    <!-- ============================================================
-         RECENT NEWS — AUTO-PULLED from news.html (top 5)
-         DO NOT edit news items here. Edit them in news.html only.
-         The static fallback below only shows if JS fetch fails
-         (e.g., when opening index.html via file:// locally).
-         ============================================================ -->
     <section class="section">
       <div class="section-title">
         <div class="eyebrow">News</div>
         <h2>Recent News</h2>
-        <p>Latest updates from the lab — auto-synced from the News page.</p>
+        <p>Latest updates from the lab.</p>
       </div>
       <div class="news-list" id="recent-news">
-        <!-- Static fallback (only shown if fetch fails) -->
+        {% assign recent_news = site.news | sort: "date" | reverse %}
+        {% for item in recent_news limit: 5 %}
         <article class="news-item">
-          <div class="date">2026-04</div>
-          <h3>Website launched</h3>
-          <p>The LSAIL website has been published.</p>
+          <div class="date">{{ item.date | date: "%Y-%m-%d" }}</div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.summary | default: item.content | strip_html | truncate: 180 }}</p>
         </article>
+        {% endfor %}
       </div>
       <p style="text-align:center; margin-top:24px;"><a href="news.html">View all news →</a></p>
     </section>
@@ -210,39 +208,5 @@
     </div>
   </footer>
 
-  <!-- ============================================================
-       Pulls the 5 most recent news items from news.html and renders
-       them into #recent-news. You do not need to touch this script —
-       just keep news.html as the single source of truth for news.
-       Note: fetch() requires HTTP(S), so locally via file:// the
-       static fallback items in #recent-news are shown instead.
-       ============================================================ -->
-  <script>
-    (function () {
-      var container = document.getElementById('recent-news');
-      if (!container) return;
-      fetch('news.html', { cache: 'no-cache' })
-        .then(function (r) { if (!r.ok) throw new Error('fetch failed'); return r.text(); })
-        .then(function (html) {
-          var doc = new DOMParser().parseFromString(html, 'text/html');
-          var articles = Array.prototype.slice.call(doc.querySelectorAll('.news-article'), 0, 5);
-          if (!articles.length) return;
-          container.innerHTML = '';
-          articles.forEach(function (a) {
-            var date  = (a.querySelector('.news-date') || {}).textContent || '';
-            var title = (a.querySelector('h2')         || {}).textContent || '';
-            var body  = (a.querySelector('p')          || {}).textContent || '';
-            var item = document.createElement('article');
-            item.className = 'news-item';
-            var d = document.createElement('div'); d.className = 'date'; d.textContent = date.trim();
-            var h = document.createElement('h3');                           h.textContent = title.trim();
-            var p = document.createElement('p');                            p.textContent = body.trim();
-            item.appendChild(d); item.appendChild(h); item.appendChild(p);
-            container.appendChild(item);
-          });
-        })
-        .catch(function () { /* leave static fallback in place */ });
-    })();
-  </script>
 </body>
 </html>

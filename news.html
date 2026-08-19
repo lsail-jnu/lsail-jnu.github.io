@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,49 +57,21 @@
 
   <main class="container">
 
-    <!-- ============================================================
-         [EDIT HERE] NEWS ARTICLES
-         - Add a new <article class="news-article"> at the TOP for the latest post
-         - Keep items in reverse chronological order (newest first)
-         - Each article has:
-             * data-featured image (optional, shown as thumbnail)
-             * date
-             * title
-             * body paragraphs (can be a single paragraph or longer write-up)
-             * optional links at the bottom
-         ============================================================ -->
-
     <section class="section">
-
-    <article class="news-article">
-      <div class="news-article-body">
-        <div class="news-date">2026-08-06</div>
-        <h2>A student joined our lab!</h2>
-        <p>A student (Yuntae Guk) joined our lab. Welcome!</p>
-      </div>
-    </article>
-  
-    <article class="news-article">
-      <div class="news-article-body">
-        <div class="news-date">2026-06-23</div>
-        <h2>Two students joined our lab!</h2>
-        <p>Two students (Gwanghu Park and Yedam Lim) joined our lab. Welcome!</p>
-      </div>
-    </article>
-  
-    <article class="news-article">
-      <div class="news-article-body">
-        <div class="news-date">2026-04-20</div>
-        <h2>Website launched</h2>
-        <p>
-          The LSAIL website has been published. News and updates will be
-          posted here, including lab activities, publications, awards,
-          and recruitment announcements.
-        </p>
-      </div>
-    </article>
-  
-  </section>
+      {% assign news_items = site.news | sort: "date" | reverse %}
+      {% for item in news_items %}
+      <article class="news-article">
+        <div class="news-article-body">
+          <div class="news-date">{{ item.date | date: "%Y-%m-%d" }}</div>
+          <h2>{{ item.title }}</h2>
+          <div class="news-copy">{{ item.content }}</div>
+          {% if item.link and item.link != "" %}
+          <p><a href="{{ item.link }}">Read more →</a></p>
+          {% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </section>
 
   </main>
 

@@ -675,6 +675,16 @@ footer * { color: #DCEBE1; }
   color: #555;
   line-height: 1.7;
 }
+.news-copy p + p { margin-top: 12px; }
+.news-copy ul,
+.news-copy ol {
+  margin: 12px 0;
+  padding-left: 24px;
+  color: #555;
+}
+.news-copy ul { list-style: disc; }
+.news-copy ol { list-style: decimal; }
+.news-article-body > p:last-child { margin-top: 14px; }
 
 /* News list (home-page preview) */
 .news-list {

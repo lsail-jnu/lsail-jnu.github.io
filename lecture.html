@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,25 +56,23 @@
 
   <main class="container">
 
-    <!-- ============================================================
-         [EDIT HERE] COURSES — grouped by year
-         - To add a new year, copy a YEAR BLOCK and change the year / list
-         - To add a course, add a new <li> inside the <ul>
-         - Course item format: "과목명 (학부/대학원, 학기)" — keep it short
-         ============================================================ -->
     <section class="section">
-
-      <!-- YEAR BLOCK TEMPLATE — copy this <div class="section"> to add a new year -->
+      {% assign course_items = site.lectures | sort: "year" | reverse %}
+      {% assign course_years = course_items | group_by: "year" %}
+      {% for year_group in course_years %}
       <div class="section">
-        <h2 style="font-size:1.4rem">2026</h2>
+        <h2 style="font-size:1.4rem">{{ year_group.name }}</h2>
         <ul class="simple-list">
-          <li>(Spring) Machine Learning</li>
-          <li>(Spring) C programming</li>
+          {% assign year_courses = year_group.items | sort: "order" %}
+          {% for course in year_courses %}
+          <li>({{ course.term }}) {{ course.title }}{% if course.level %} — {{ course.level }}{% endif %}</li>
+          {% endfor %}
         </ul>
       </div>
-      <!-- /YEAR BLOCK TEMPLATE -->
-
-  
+      {% else %}
+      <p>To be updated.</p>
+      {% endfor %}
+    </section>
 
   </main>
 

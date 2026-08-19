@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,77 +57,54 @@
 
   <main class="container">
 
-    <!-- ============================================================
-         [EDIT HERE] JOURNALS — list publications by year (newest first)
-         - To add a new year, copy a <section class="section"> block
-         - Each <li> format:
-             <strong>Title</strong><br/>
-             Author list (* = corresponding)<br/>
-             Journal, Volume(Issue), Pages (Year)
-         - To add a link: wrap the title in <a href="...">
-         ============================================================ -->
     <section class="section" id="journals">
       <div class="section-title">
         <h2>Journal Publications</h2>
       </div>
-
-      <!-- YEAR BLOCK TEMPLATE — copy this <div class="section"> to add a new year -->
-      <div class="section" id="year-2025">
-        <h2 style="font-size:1.4rem">2025</h2>
+      {% assign journals = site.publications | where: "publication_type", "journal" | sort: "year" | reverse %}
+      {% assign journal_years = journals | group_by: "year" %}
+      {% for year_group in journal_years %}
+      <div class="section" id="year-{{ year_group.name }}">
+        <h2 style="font-size:1.4rem">{{ year_group.name }}</h2>
         <ol class="pubs">
+          {% assign year_pubs = year_group.items | sort: "order" %}
+          {% for pub in year_pubs %}
           <li>
-            <strong>A genotype-to-drug diffusion model for generation of tailored anti-cancer small molecules</strong><br/>
-            Hyunho Kim, Bonsung Bae, Minsu Park, Yewon Shin, Trey Ideker*, Hojung Nam*<br/>
-            Nature Communications 16(1), 5628 (2025)
+            <strong>{% if pub.link and pub.link != "" %}<a href="{{ pub.link }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</strong><br/>
+            {{ pub.authors }}<br/>
+            {{ pub.venue }}
           </li>
-          <li>
-            <strong>Enhancing multi-task in vivo toxicity prediction via integrated knowledge transfer of chemical knowledge and in vitro toxicity information</strong><br/>
-            Minsu Park, Yewon Shin, Hyunho Kim, Hojung Nam<br/>
-            Journal of Cheminformatics 17(1) (2025)
-          </li>
+          {% endfor %}
         </ol>
       </div>
-      <!-- /YEAR BLOCK TEMPLATE -->
-
-      <div class="section" id="year-2022">
-        <h2 style="font-size:1.4rem">2022</h2>
-        <ol class="pubs">
-          <li>
-            <strong>BayeshERG: a robust, reliable and interpretable deep learning model for predicting hERG channel blockers</strong><br/>
-            Hyunho Kim, Minsu Park, Ingoo Lee, Hojung Nam*<br/>
-            Briefings in Bioinformatics 23(4), bbac211 (2022)
-          </li>
-        </ol>
-      </div>
-
-      <div class="section" id="year-2020">
-        <h2 style="font-size:1.4rem">2020</h2>
-        <ol class="pubs">
-          <li>
-            <strong>hERG-Att: Self-Attention-Based Deep Neural Network for Predicting hERG Blockers</strong><br/>
-            Hyunho Kim, Hojung Nam*<br/>
-            Computational Biology and Chemistry 87, 107286 (2020)
-          </li>
-          <li>
-            <strong>Artificial Intelligence in Drug Discovery: A Comprehensive Review of Data-Driven and Machine Learning Approaches</strong><br/>
-            Hyunho Kim, Eunyoung Kim, Ingoo Lee, Bongsung Bae, Minsu Park, Hojung Nam*<br/>
-            Biotechnology and Bioprocess Engineering 25(6), 895–930 (2020)
-          </li>
-        </ol>
-      </div>
+      {% else %}
+      <p>To be updated.</p>
+      {% endfor %}
     </section>
 
-    <!-- ============================================================
-         [EDIT HERE] CONFERENCES
-         - Same format as journals, grouped by year
-         ============================================================ -->
     <section class="section" id="conferences">
       <div class="section-title">
         <h2>Conference Publications</h2>
       </div>
-      <ol class="pubs">
-        <li>TBD — conference paper title, authors, venue (year)</li>
-      </ol>
+      {% assign conferences = site.publications | where: "publication_type", "conference" | sort: "year" | reverse %}
+      {% assign conference_years = conferences | group_by: "year" %}
+      {% for year_group in conference_years %}
+      <div class="section" id="conference-year-{{ year_group.name }}">
+        <h2 style="font-size:1.4rem">{{ year_group.name }}</h2>
+        <ol class="pubs">
+          {% assign year_pubs = year_group.items | sort: "order" %}
+          {% for pub in year_pubs %}
+          <li>
+            <strong>{% if pub.link and pub.link != "" %}<a href="{{ pub.link }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{% endif %}</strong><br/>
+            {{ pub.authors }}<br/>
+            {{ pub.venue }}
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+      {% else %}
+      <p>To be updated.</p>
+      {% endfor %}
     </section>
 
     <section class="section">

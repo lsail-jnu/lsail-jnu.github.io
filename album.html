@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,31 +57,23 @@
 
   <main class="container">
 
-    <!-- ============================================================
-         [EDIT HERE] PHOTO GALLERY
-         - Each <a class="album-item"> is one photo
-         - data-caption = optional caption shown in the lightbox overlay
-         - href = full-size image path (can be same as src for now)
-         - src  = thumbnail shown in the grid
-         - Recommended image ratio: 4:3 (grid will crop to 4:3)
-         - Just copy the PHOTO CARD TEMPLATE below to add a new photo
-         ============================================================ -->
     <section class="section">
 
       <div class="album-grid">
-
-        <!-- PHOTO CARD TEMPLATE — copy this block to add a new photo -->
-        <a class="album-item" href="assets/hero.jpg"
-           data-caption="Example caption — replace with your own">
-          <img src="assets/hero.jpg" alt="Event or moment" />
+        {% assign album_items = site.albums | sort: "date" | reverse %}
+        {% for photo in album_items %}
+        <a class="album-item" href="{{ photo.image }}"
+           data-caption="{{ photo.caption | default: photo.description | escape }}">
+          <img src="{{ photo.image }}" alt="{{ photo.alt | default: photo.title }}" />
           <div class="album-caption">
-            <div class="date">2026-04</div>
-            <h3>Event or moment</h3>
-            <p>Short caption or description.</p>
+            <div class="date">{{ photo.date | date: "%Y-%m-%d" }}</div>
+            <h3>{{ photo.title }}</h3>
+            <p>{{ photo.description }}</p>
           </div>
         </a>
-        <!-- /PHOTO CARD TEMPLATE -->
-
+        {% else %}
+        <p>To be updated.</p>
+        {% endfor %}
       </div>
     </section>
 

@@ -1,0 +1,287 @@
+timezone: Asia/Seoul
+
+paths:
+  uploads: assets/uploads
+  dam_uploads: assets/uploads
+
+collection_groups:
+  - heading: Website Content
+    collections:
+      - news
+      - people
+      - publications
+      - patents
+      - lectures
+      - albums
+
+collections_config:
+  news:
+    path: _news
+    name: News
+    singular_name: News item
+    icon: campaign
+    disable_url: true
+    description: Lab announcements and updates. Newest dates appear first automatically.
+    sort:
+      key: date
+      order: descending
+    preview:
+      text:
+        - key: title
+      subtext:
+        - key: date
+    _enabled_editors:
+      - content
+      - data
+    create:
+      extra_data:
+        filename: "{date|year}-{date|month}-{date|day}-{title}"
+      path: "[relative_base_path]/{filename|slugify}.[ext]"
+    schemas:
+      default:
+        path: .cloudcannon/schemas/news.md
+        name: News item
+        icon: campaign
+
+  people:
+    path: _people
+    name: People
+    singular_name: Person
+    icon: groups
+    disable_url: true
+    description: Professor, current members, and alumni.
+    sort:
+      key: order
+      order: ascending
+    preview:
+      text:
+        - key: name
+      subtext:
+        - key: group
+      icon:
+        - key: image
+    _enabled_editors:
+      - data
+    create:
+      extra_data:
+        filename: "{name}"
+      path: "[relative_base_path]/{filename|slugify}.[ext]"
+    schema_key: _schema
+    schemas:
+      professor:
+        path: .cloudcannon/schemas/professor.md
+        name: Professor
+        icon: school
+      member:
+        path: .cloudcannon/schemas/member.md
+        name: Current member
+        icon: person
+      alumnus:
+        path: .cloudcannon/schemas/alumnus.md
+        name: Alumnus
+        icon: workspace_premium
+
+  publications:
+    path: _publications
+    name: Publications
+    singular_name: Publication
+    icon: article
+    disable_url: true
+    description: Journal and conference publications.
+    sort:
+      key: year
+      order: descending
+    preview:
+      text:
+        - key: title
+      subtext:
+        - key: venue
+    _enabled_editors:
+      - data
+    create:
+      extra_data:
+        filename: "{year}-{title}"
+      path: "[relative_base_path]/{filename|slugify}.[ext]"
+    schemas:
+      default:
+        path: .cloudcannon/schemas/publication.md
+        name: Publication
+        icon: article
+
+  patents:
+    path: _patents
+    name: Patents
+    singular_name: Patent
+    icon: license
+    disable_url: true
+    description: Patent applications and registrations.
+    sort:
+      key: year
+      order: descending
+    preview:
+      text:
+        - key: title
+      subtext:
+        - key: patent_number
+    _enabled_editors:
+      - data
+    create:
+      extra_data:
+        filename: "{year}-{title}"
+      path: "[relative_base_path]/{filename|slugify}.[ext]"
+    schemas:
+      default:
+        path: .cloudcannon/schemas/patent.md
+        name: Patent
+        icon: license
+
+  lectures:
+    path: _lectures
+    name: Lecture
+    singular_name: Course
+    icon: menu_book
+    disable_url: true
+    description: Courses grouped automatically by year.
+    sort:
+      key: year
+      order: descending
+    preview:
+      text:
+        - key: title
+      subtext:
+        - key: year
+    _enabled_editors:
+      - data
+    create:
+      extra_data:
+        filename: "{year}-{term}-{title}"
+      path: "[relative_base_path]/{filename|slugify}.[ext]"
+    schemas:
+      default:
+        path: .cloudcannon/schemas/lecture.md
+        name: Course
+        icon: menu_book
+
+  albums:
+    path: _albums
+    name: Album
+    singular_name: Photo
+    icon: photo_library
+    disable_url: true
+    description: Lab photos. Uploads are saved under assets/uploads.
+    sort:
+      key: date
+      order: descending
+    preview:
+      text:
+        - key: title
+      subtext:
+        - key: date
+      icon:
+        - key: image
+    _enabled_editors:
+      - data
+    create:
+      extra_data:
+        filename: "{date|year}-{date|month}-{date|day}-{title}"
+      path: "[relative_base_path]/{filename|slugify}.[ext]"
+    schemas:
+      default:
+        path: .cloudcannon/schemas/album.md
+        name: Photo
+        icon: add_photo_alternate
+
+_inputs:
+  _schema:
+    hidden: true
+  title:
+    type: text
+    label: Title
+    options:
+      required: true
+  name:
+    type: text
+    label: Name
+    options:
+      required: true
+  date:
+    type: date
+    label: Date
+    options:
+      required: true
+  year:
+    type: number
+    label: Year
+    options:
+      required: true
+  order:
+    type: number
+    label: Display order
+    comment: Smaller numbers appear first when items share the same group or year.
+  summary:
+    type: textarea
+    label: Short summary
+    comment: Used on the home page.
+  link:
+    type: url
+    label: Optional link
+  image:
+    type: image
+    label: Image
+  alt:
+    type: text
+    label: Alternative text
+    comment: Briefly describe the image for accessibility.
+  group:
+    type: select
+    label: Group
+    options:
+      values:
+        - professor
+        - member
+        - alumni
+  badge:
+    type: text
+    label: Badge
+    comment: For example, UNDERGRAD, M.S., or Ph.D.
+  publication_type:
+    type: select
+    label: Publication type
+    options:
+      values:
+        - journal
+        - conference
+  term:
+    type: select
+    label: Term
+    options:
+      values:
+        - Spring
+        - Summer
+        - Fall
+        - Winter
+  authors:
+    type: textarea
+    label: Authors
+  venue:
+    type: textarea
+    label: Journal or conference
+  inventors:
+    type: textarea
+    label: Inventors
+  patent_number:
+    type: text
+    label: Registration or application number
+  profile_url:
+    type: url
+    label: Profile link
+  email:
+    type: text
+    label: Email
+  description:
+    type: textarea
+    label: Description
+  caption:
+    type: textarea
+    label: Lightbox caption
+
