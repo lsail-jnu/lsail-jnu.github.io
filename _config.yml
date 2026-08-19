@@ -1,0 +1,26 @@
+title: LSAIL | Life Science and AI Lab
+description: Life Science and AI Lab at Chonnam National University
+url: https://lsail-jnu.github.io
+baseurl: ""
+timezone: Asia/Seoul
+
+collections:
+  news:
+    output: false
+  people:
+    output: false
+  publications:
+    output: false
+  patents:
+    output: false
+  lectures:
+    output: false
+  albums:
+    output: false
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+

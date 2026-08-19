@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,21 +57,18 @@
 
   <main class="container">
 
-    <!-- ============================================================
-         [EDIT HERE] PATENTS
-         - Each <li> format:
-             <strong>Patent title</strong><br/>
-             Inventors<br/>
-             Registration / Application number (Country, Year)
-         - Remove this placeholder <li> when adding real entries
-         ============================================================ -->
     <section class="section">
       <ol class="pubs">
+        {% assign patent_items = site.patents | sort: "year" | reverse %}
+        {% for patent in patent_items %}
         <li>
-          <strong>유전자형 기반 항암제 후보 화합물 생성 시스템 및 방법</strong><br/>
-          남호정, 김현호<br/>
-          1028241650000 (2025)
+          <strong>{{ patent.title }}</strong><br/>
+          {{ patent.inventors }}<br/>
+          {{ patent.patent_number }}{% if patent.country %} ({{ patent.country }}, {{ patent.year }}){% else %} ({{ patent.year }}){% endif %}{% if patent.status %} · {{ patent.status }}{% endif %}
         </li>
+        {% else %}
+        <li>To be updated.</li>
+        {% endfor %}
       </ol>
     </section>
 
@@ -86,8 +85,8 @@
       </div>
       <div>
         <h4>Contact</h4>
-        <p>Department of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
-        <p><a href="mailto:khh0115@gmail.com">khh0115@gmail.com</a></p>
+        <p>School of Artificial Intelligence<br/>Chonnam National University<br/>Gwangju, Republic of Korea</p>
+        <p><a href="mailto:hyunhokim@jnu.ac.kr">hyunhokim@jnu.ac.kr</a></p>
       </div>
       <div>
         <h4>Links</h4>

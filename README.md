@@ -1,19 +1,28 @@
 # LSAIL GitHub Pages Site
 
-This folder contains a simple static website for the LSAIL lab homepage.
+The public site remains hosted by GitHub Pages. Content is stored in Jekyll
+collections so it can be managed with CloudCannon without editing HTML.
 
-Files:
-- index.html
-- research.html
-- publications.html
-- teaching.html
-- people.html
-- news.html
-- contact.html
-- style.css
+## Content collections
 
-To publish with GitHub Pages:
-1. Upload all files to the root of the repository.
-2. In GitHub repository settings, open Pages.
-3. Set the source to deploy from the main branch root.
-4. Save and wait a few minutes.
+- `_news`: announcements and updates
+- `_people`: professor, current members, and alumni
+- `_publications`: journal and conference publications
+- `_patents`: patents and applications
+- `_lectures`: courses
+- `_albums`: gallery items
+
+The editing interface is configured in `cloudcannon.config.yml`. CloudCannon
+uploads images to `assets/uploads` and writes content updates back to this
+repository. GitHub Pages then rebuilds the public website automatically.
+
+## Connect CloudCannon
+
+1. Create a CloudCannon account and choose **Create Site**.
+2. Connect the GitHub repository `lsail-jnu/lsail-jnu.github.io`.
+3. Select **Jekyll** as the static site generator.
+4. Use the repository root as the source and `_site` as the output directory.
+5. After the first build, open the **Website Content** collections to add or
+   edit News, People, Publications, Patents, Lecture, and Album entries.
+
+The existing GitHub Pages address and visual design do not need to change.
