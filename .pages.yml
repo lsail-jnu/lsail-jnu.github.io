@@ -1,0 +1,350 @@
+media:
+  input: assets
+  output: /assets
+  categories: [image]
+  extensions: [jpg, jpeg, png, gif, webp, svg]
+  rename: safe
+
+settings:
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "Add {name}: {filename}"
+      update: "Update {name}: {filename}"
+      delete: "Delete {name}: {filename}"
+      rename: "Rename {name}: {oldFilename} to {newFilename}"
+
+content:
+  - name: news
+    label: News
+    type: collection
+    path: _news
+    format: yaml-frontmatter
+    filename:
+      template: "{date}-{title}.md"
+      field: false
+    view:
+      fields: [title, date, summary]
+      primary: title
+      sort: [date, title, order]
+      search: [title, summary, body]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: summary
+        label: Short summary
+        type: text
+        required: true
+        description: Used on the home page.
+      - name: link
+        label: Optional link
+        type: string
+      - name: order
+        label: Display order
+        type: number
+        default: 1
+        description: Smaller numbers appear first when dates match.
+      - name: body
+        label: Full article
+        type: rich-text
+        options:
+          format: markdown
+          media: false
+
+  - name: people
+    label: People
+    type: collection
+    path: _people
+    format: yaml-frontmatter
+    filename:
+      template: "{name}.md"
+      field: false
+    view:
+      fields: [name, group, badge, research, order]
+      primary: name
+      sort: [order, name, group]
+      search: [name, group, research, current_position]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: group
+        label: Group
+        type: select
+        required: true
+        options:
+          values:
+            - name: professor
+              label: Professor
+            - name: member
+              label: Current member
+            - name: alumni
+              label: Alumni
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: badge
+        label: Badge
+        type: string
+        description: For example, UNDERGRAD, M.S., or Ph.D.
+      - name: image
+        label: Profile image
+        type: image
+        options:
+          path: assets/uploads
+          rename: safe
+          categories: [image]
+      - name: position
+        label: Position
+        type: string
+      - name: institution
+        label: Institution
+        type: string
+      - name: research
+        label: Research interests
+        type: text
+      - name: phone
+        label: Phone
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: office
+        label: Office
+        type: string
+      - name: profile_url
+        label: Profile page URL
+        type: string
+      - name: current_position
+        label: Current position
+        type: string
+      - name: graduation_year
+        label: Graduation year
+        type: number
+        options:
+          min: 2000
+          max: 2100
+      - name: order
+        label: Display order
+        type: number
+        default: 10
+        required: true
+
+  - name: publications
+    label: Publications
+    type: collection
+    path: _publications
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{title}.md"
+      field: false
+    view:
+      fields: [title, year, publication_type, venue, order]
+      primary: title
+      sort: [year, order, title]
+      search: [title, authors, venue]
+      default:
+        sort: year
+        order: desc
+    fields:
+      - name: publication_type
+        label: Publication type
+        type: select
+        required: true
+        options:
+          values:
+            - name: journal
+              label: Journal
+            - name: conference
+              label: Conference
+      - name: year
+        label: Year
+        type: number
+        required: true
+        options:
+          min: 1900
+          max: 2100
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: authors
+        label: Authors
+        type: text
+        required: true
+      - name: venue
+        label: Journal or conference
+        type: text
+        required: true
+      - name: link
+        label: Optional link
+        type: string
+      - name: order
+        label: Display order within year
+        type: number
+        default: 1
+        required: true
+
+  - name: patents
+    label: Patents
+    type: collection
+    path: _patents
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{title}.md"
+      field: false
+    view:
+      fields: [title, year, patent_number, status, order]
+      primary: title
+      sort: [year, order, title]
+      search: [title, inventors, patent_number]
+      default:
+        sort: year
+        order: desc
+    fields:
+      - name: year
+        label: Year
+        type: number
+        required: true
+        options:
+          min: 1900
+          max: 2100
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: inventors
+        label: Inventors
+        type: text
+        required: true
+      - name: patent_number
+        label: Registration or application number
+        type: string
+        required: true
+      - name: country
+        label: Country
+        type: string
+        required: true
+      - name: status
+        label: Status
+        type: select
+        required: true
+        options:
+          values: [Filed, Published, Registered, Granted]
+      - name: order
+        label: Display order within year
+        type: number
+        default: 1
+        required: true
+
+  - name: lectures
+    label: Lecture
+    type: collection
+    path: _lectures
+    format: yaml-frontmatter
+    filename:
+      template: "{year}-{term}-{title}.md"
+      field: false
+    view:
+      fields: [title, year, term, level, order]
+      primary: title
+      sort: [year, order, title]
+      search: [title, year, term, level]
+      default:
+        sort: year
+        order: desc
+    fields:
+      - name: year
+        label: Year
+        type: number
+        required: true
+        options:
+          min: 2000
+          max: 2100
+      - name: term
+        label: Term
+        type: select
+        required: true
+        options:
+          values: [Spring, Summer, Fall, Winter]
+      - name: title
+        label: Course title
+        type: string
+        required: true
+      - name: level
+        label: Level
+        type: select
+        required: true
+        options:
+          values: [Undergraduate, Graduate]
+      - name: order
+        label: Display order within year
+        type: number
+        default: 1
+        required: true
+
+  - name: albums
+    label: Album
+    type: collection
+    path: _albums
+    format: yaml-frontmatter
+    filename:
+      template: "{date}-{title}.md"
+      field: false
+    view:
+      fields: [title, date, image, description, order]
+      primary: title
+      sort: [date, order, title]
+      search: [title, description, caption]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: date
+        label: Date
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: image
+        label: Photo
+        type: image
+        required: true
+        options:
+          path: assets/uploads
+          rename: safe
+          categories: [image]
+      - name: alt
+        label: Alternative text
+        type: string
+        required: true
+        description: Briefly describe the image for accessibility.
+      - name: description
+        label: Gallery description
+        type: text
+      - name: caption
+        label: Enlarged photo caption
+        type: text
+      - name: order
+        label: Display order
+        type: number
+        default: 1
+        required: true

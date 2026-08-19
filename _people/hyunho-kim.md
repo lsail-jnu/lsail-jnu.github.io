@@ -1,5 +1,4 @@
 ---
-_schema: professor
 group: professor
 name: Hyunho Kim
 image: /assets/hyunho-kim.jpg
@@ -12,4 +11,3 @@ office: 공과대학 7호관 801호
 profile_url: /professor.html
 order: 1
 ---
-
