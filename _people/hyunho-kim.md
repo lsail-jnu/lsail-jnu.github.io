@@ -7,7 +7,7 @@ institution: School of Artificial Intelligence, Chonnam National University
 research: Computational Biology, AI for Life Science, Drug Discovery
 phone: 062-530-4221
 email: hyunhokim@jnu.ac.kr
-office: 공과대학 7호관 801호
+office: 공과대학 7호관 445호
 profile_url: /professor.html
 order: 1
 ---
