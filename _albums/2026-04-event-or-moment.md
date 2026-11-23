@@ -1,9 +1,7 @@
 ---
-date: "2026-04-01"
-title: Event or moment
-image: /assets/hero.jpg
-alt: Event or moment at LSAIL
-description: Short caption or description.
-caption: Example caption — replace with your own
+date: 2026-11-18
+title: BIOINFO / GIW-ISCB 2026
+image: /assets/uploads/20261119131155.jpg
+alt: LSAIL @ BIOINFO 2026!
 order: 1
 ---
