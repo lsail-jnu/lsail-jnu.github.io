@@ -9,6 +9,8 @@ collections:
     output: false
   people:
     output: false
+  projects:
+    output: false
   publications:
     output: false
   patents:

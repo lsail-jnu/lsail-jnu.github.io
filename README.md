@@ -7,6 +7,7 @@ collections so it can be managed with Pages CMS without editing HTML.
 
 - `_news`: announcements and updates
 - `_people`: professor, current members, and alumni
+- `_projects`: project cards on the Research page
 - `_publications`: journal and conference publications
 - `_patents`: patents and applications
 - `_lectures`: courses
@@ -22,7 +23,7 @@ the public website automatically.
    and grant access only to `lsail-jnu/lsail-jnu.github.io`.
 2. Sign in at [app.pagescms.org](https://app.pagescms.org/) with GitHub.
 3. Select the `lsail-jnu/lsail-jnu.github.io` repository and the `main` branch.
-4. Open News, People, Publications, Patents, Lecture, or Album to add, edit,
+4. Open News, People, Projects, Publications, Patents, Lecture, or Album to add, edit,
    or remove an entry.
 5. Save the entry. Pages CMS commits the change to GitHub, and GitHub Pages
    publishes the updated website automatically.

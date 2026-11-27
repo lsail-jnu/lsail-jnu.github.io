@@ -144,6 +144,38 @@ content:
         default: 10
         required: true
 
+  - name: projects
+    label: Projects
+    type: collection
+    path: _projects
+    format: yaml-frontmatter
+    filename:
+      template: "{title}.md"
+      field: false
+    view:
+      fields: [title, order]
+      primary: title
+      sort: [order, title]
+      search: [title, description]
+      default:
+        sort: order
+        order: asc
+    fields:
+      - name: title
+        label: Project title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        description: Include the project goal, funder, timeline, or collaborators as needed.
+      - name: order
+        label: Display order
+        type: number
+        default: 10
+        required: true
+        description: Smaller numbers appear first.
+
   - name: publications
     label: Publications
     type: collection

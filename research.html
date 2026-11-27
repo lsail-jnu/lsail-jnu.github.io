@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,19 +99,20 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         [EDIT HERE] PROJECTS — ongoing / featured projects
-         - Duplicate <div class="card"> for each project
-         ============================================================ -->
     <section class="section" id="projects">
       <div class="section-title">
         <h2>Projects</h2>
       </div>
       <div class="grid">
+        {% assign projects = site.projects | sort: "order" %}
+        {% for project in projects %}
         <div class="card">
-          <h3>TBD — Project title</h3>
-          <p>Short description of the project (funder, timeline, collaborators, goal).</p>
+          <h3>{{ project.title | escape }}</h3>
+          {% if project.description %}<p>{{ project.description | escape | newline_to_br }}</p>{% endif %}
         </div>
+        {% else %}
+        <p>To be updated.</p>
+        {% endfor %}
       </div>
     </section>
 
