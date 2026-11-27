@@ -1,5 +1,5 @@
 ---
-title: TBD — Project title
-description: Short description of the project (funder, timeline, collaborators, goal).
-order: 10
+title: AI Star Fellowship Support Program
+description: 2026~2032, IITP, 2 Billion Won
+order: 1
 ---
