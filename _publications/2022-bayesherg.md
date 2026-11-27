@@ -1,10 +1,10 @@
 ---
 publication_type: journal
 year: 2022
-title: "BayeshERG: a robust, reliable and interpretable deep learning model for predicting hERG channel blockers"
+title: "BayeshERG: a robust, reliable and interpretable deep learning model for
+  predicting hERG channel blockers"
 authors: Hyunho Kim, Minsu Park, Ingoo Lee, Hojung Nam*
 venue: Briefings in Bioinformatics 23(4), bbac211 (2022)
-link:
+link: https://academic.oup.com/bib/article/23/4/bbac211/6609519
 order: 1
 ---
-
